@@ -1,17 +1,24 @@
 import { useState } from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import AppLayout from "./components/layout/app-layout";
 
 function App() {
-  // const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
-  // const toggleDarkMode = () => {
-  //   setIsDark(!isDark);
-  //   document.body.classList.toggle("dark");
-  // };
+  const toggleDarkMode = () => {
+    setIsDark(!isDark);
+    document.body.classList.toggle("dark");
+  };
 
   return (
-    <>
-      <h1 className="text-3xl font-bold">Hello world!</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route index element={<Navigate replace to="/overview" />} />
+          <Route path="/overview" element={<h1>Hello</h1>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
