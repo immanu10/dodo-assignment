@@ -25,8 +25,8 @@ const data = [
 
 export function PieChart({ title }: { title: string }) {
   return (
-    <div className="relative min-h-[328px] py-6 px-6 rounded-2xl bg-[#f8f9fb]">
-      <h3 className="absolute top-6 left-6 text-foreground font-medium">
+    <div className="relative min-h-[328px] py-6 px-6 rounded-2xl bg-[#f8f9fb]  dark:bg-slate-800">
+      <h3 className="absolute top-6 left-6 text-foreground font-medium dark:text-foreground-dark">
         {title}
       </h3>
       <ResponsiveContainer width="100%" height="100%">
@@ -50,10 +50,10 @@ export function PieChart({ title }: { title: string }) {
           />
         </PieReChart>
       </ResponsiveContainer>
-      <div className="absolute right-6 top-[50%]  translate-y-[-50%]">
+      <div className="absolute right-6 top-[50%]  translate-y-[-50%]  ">
         <ul className="flex flex-col space-y-2">
           {data.map((item) => (
-            <li className="flex gap-8 items-center text-sm text-foreground">
+            <li className="flex gap-8 items-center text-sm text-foreground dark:text-slate-300">
               <div className="flex items-center gap-2">
                 <span
                   className="inline-block w-2 h-2 rounded-full"

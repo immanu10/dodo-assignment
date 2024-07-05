@@ -41,8 +41,8 @@ const data = [
 
 export function LineChart({ title }: { title: string }) {
   return (
-    <div className="relative min-h-[328px] py-6 px-6 rounded-2xl bg-[#f8f9fb]">
-      <h3 className="absolute top-6 left-6 text-foreground font-medium">
+    <div className="relative min-h-[328px] py-6 px-6 rounded-2xl bg-[#f8f9fb] dark:bg-slate-800">
+      <h3 className="absolute top-6 left-6 text-foreground font-medium dark:text-foreground-dark">
         {title}
       </h3>
       <ResponsiveContainer width="100%" height="100%">
