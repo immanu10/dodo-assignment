@@ -1,8 +1,6 @@
-import { ChevronDown, X } from "lucide-react";
-import { RocketIcon } from "../assets/icons/RocketIcon";
-import { ReactNode } from "react";
+import { X } from "lucide-react";
 import { StartIcon } from "../assets/icons/StarIcon";
-import { Link } from "react-router-dom";
+import SidebarSection from "./ui/navbar";
 
 type SidebarProps = {
   mobileNavOpen: boolean;
@@ -36,38 +34,16 @@ function SidebarView() {
   return (
     <div className="w-full h-full px-4">
       <SidebarSection name="Pages">
-        <SidebarNavItem />
-        <SidebarNavItem />
-        <SidebarNavItem />
+        <SidebarSection.Item
+          label="Overview"
+          icon={<StartIcon />}
+          to="/overview"
+        />
+        <SidebarSection.Item label="Transaction" icon={<StartIcon />}>
+          <SidebarSection.SubItem label="Overview" to="/transaction/overview" />
+          <SidebarSection.SubItem label="Products" to="/transaction/products" />
+        </SidebarSection.Item>
       </SidebarSection>
-    </div>
-  );
-}
-
-function SidebarSection({
-  name,
-  children,
-}: {
-  name: string;
-  children: ReactNode;
-}) {
-  return (
-    <div className="">
-      <h4 className="text-gray-400 text-sm">{name}</h4>
-      <div className="mt-2 flex flex-col space-y-1">{children}</div>
-    </div>
-  );
-}
-
-function SidebarNavItem() {
-  return (
-    <div className="relative bg-muted py-1 rounded-lg">
-      <div className="absolute left-0 inset-y-0 my-auto h-[20px] rounded-2xl bg-black w-1"></div>
-      <div className="pl-4 flex items-center gap-2">
-        <ChevronDown className="text-gray-400 w-4 h-4" />
-        <StartIcon />
-        <p className="font-light">Overview</p>
-      </div>
     </div>
   );
 }
