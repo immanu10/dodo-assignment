@@ -1,17 +1,19 @@
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronRight, Link } from "lucide-react";
 import React, { ReactNode, useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { cn } from "../../lib/utils";
 
 function SidebarSection({
+  className,
   name,
   children,
 }: {
+  className?: string;
   name: string;
   children: ReactNode;
 }) {
   return (
-    <div className="">
+    <div className={className}>
       <h4 className="text-gray-400 text-sm">{name}</h4>
       <ul className="mt-2 flex flex-col space-y-0.5 select-none">{children}</ul>
     </div>
@@ -23,12 +25,14 @@ function SidebarNavItem({
   icon,
   label,
   to,
+  url,
 }: {
   children?: ReactNode;
   icon?: ReactNode;
   label: string;
   to?: string;
   expand?: boolean;
+  url?: string;
 }) {
   const { pathname } = useLocation();
   const isParentPath =
@@ -55,17 +59,36 @@ function SidebarNavItem({
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (
-            <ChevronUp className="text-gray-400 w-5 h-5" />
+            <ChevronDown className="text-gray-400 w-4 h-4" />
           ) : (
-            <ChevronDown className="text-gray-400 w-5 h-5" />
+            <ChevronRight className="text-gray-400 w-4 h-4" />
           )}
 
           {icon}
-          <p className="font-light">{label}</p>
+          <span className="text-sm font-medium opacity-80 group-hover:opacity-100 transition-all">
+            {label}
+          </span>
         </div>
         {isOpen && (
           <ul className="mt-1 flex flex-col space-y-0.5">{children}</ul>
         )}
+      </li>
+    );
+  }
+  if (url) {
+    return (
+      <li>
+        <a
+          href={url}
+          target="_blank"
+          className="px-4 py-1 flex items-center gap-2 rounded-lg hover:bg-muted"
+        >
+          <Link className="text-gray-400 w-3 h-3" />
+          {icon}
+          <span className="text-sm font-medium opacity-80 group-hover:opacity-100 transition-all">
+            {label}
+          </span>
+        </a>
       </li>
     );
   }
@@ -89,7 +112,9 @@ function SidebarNavItem({
               )}
             >
               {icon}
-              <p className="font-light">{label}</p>
+              <span className="text-sm font-medium opacity-80 group-hover:opacity-100 transition-all">
+                {label}
+              </span>
             </div>
           </>
         )}
@@ -117,7 +142,9 @@ function SidebarSubItem({ label, to }: { label: string; to: string }) {
                 }
               )}
             >
-              <p className="font-light ml-14">{label}</p>
+              <span className="ml-14 text-sm font-medium opacity-80 group-hover:opacity-100 transition-all">
+                {label}
+              </span>
             </div>
           </>
         )}

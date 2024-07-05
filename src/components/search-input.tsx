@@ -4,12 +4,14 @@ export function SearchInput() {
   return (
     <form>
       <div className="relative">
-        <SearchIcon className="absolute left-2 top-2 " />
+        <SearchIcon className="absolute left-2 top-1.5 " />
         <input
-          className="flex h-8 w-full rounded-md bg-muted px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-300 placeholder:text-muted-foreground pl-8 pr-8"
+          className="flex h-7 w-full rounded-md bg-muted px-3 py-1 text-xs shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-300 placeholder:text-muted-foreground pl-8 pr-8"
           placeholder="Search..."
         ></input>
-        <p className="block absolute right-2 top-1 text-muted-foreground">⌘/</p>
+        <p className="block absolute right-2 top-0.5 text-muted-foreground">
+          ⌘/
+        </p>
       </div>
     </form>
   );

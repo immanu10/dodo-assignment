@@ -7,6 +7,8 @@ import {
   Routes,
 } from "react-router-dom";
 import AppLayout from "./components/layout/app-layout";
+import NotFound from "./pages/not-found";
+import { OverViewPage } from "./pages/overview";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -21,7 +23,7 @@ function App() {
       <Routes>
         <Route element={<AppLayout />}>
           <Route index element={<Navigate replace to="/overview" />} />
-          <Route path="/overview" element={<h1>Hello</h1>} />
+          <Route path="/overview" element={<OverViewPage />} />
           <Route
             path="/transaction"
             element={
@@ -36,6 +38,7 @@ function App() {
             <Route path="products" element={<h1> products</h1>} />
           </Route>
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
