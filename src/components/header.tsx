@@ -7,6 +7,7 @@ import { MenuIcon, SidebarClose, SidebarOpen } from "lucide-react";
 import { SunIcon } from "../assets/icons/SunIcon";
 import { ClockIcon } from "../assets/icons/ClockIcon";
 import { BellIcon } from "../assets/icons/BellIcon";
+import { useDarkMode } from "../context/ThemeContext";
 
 type HeaderProps = {
   setMobileNavOpen: (value: boolean) => void;
@@ -21,6 +22,7 @@ export function Header({
 }: HeaderProps) {
   const [pageName, setPageName] = useState("");
   const location = useLocation();
+  const { toggleDarkMode } = useDarkMode();
 
   useEffect(() => {
     const pagePath = location.pathname.split("/");
@@ -28,7 +30,7 @@ export function Header({
   }, [location.pathname]);
 
   return (
-    <header className="border-b border-border py-3 px-2 grid grid-cols-[1fr_auto] gap-2 items-center">
+    <header className="border-b border-border dark:border-slate-800 py-3 px-2 grid grid-cols-[1fr_auto] gap-2 items-center">
       <div className="flex flex-col md:flex-row md:items-center">
         <button
           className="p-1 block md:hidden"
@@ -46,7 +48,7 @@ export function Header({
       </div>
       <div className="flex items-center gap-2">
         <SearchInput />
-        <button className="p-1">
+        <button className="p-1" onClick={toggleDarkMode}>
           <SunIcon />
         </button>
         <button className="p-1">
@@ -57,9 +59,9 @@ export function Header({
         </button>
         <button className="p-1" onClick={toggleNotificationSection}>
           {notificationOpen ? (
-            <SidebarClose className="w-5 h-5 fill-muted" />
+            <SidebarClose className="w-5 h-5 " />
           ) : (
-            <SidebarOpen className="w-5 h-5 fill-muted" />
+            <SidebarOpen className="w-5 h-5" />
           )}
         </button>
       </div>

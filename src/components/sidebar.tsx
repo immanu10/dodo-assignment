@@ -21,12 +21,12 @@ type SidebarProps = {
 export function Sidebar({ mobileNavOpen, setMobileNavOpen }: SidebarProps) {
   return (
     <>
-      <aside className="row-span-full bg-background hidden md:flex border-r border-border overflow-y-auto">
+      <aside className="row-span-full bg-background dark:bg-background-dark  hidden md:flex border-r border-border dark:border-slate-800 overflow-y-auto">
         <SidebarView />
       </aside>
       {mobileNavOpen && (
         <div className="md:hidden fixed h-full w-screen bg-black/80 z-40 inset-0 overflow-hidden transition-all">
-          <div className="h-full w-[248px] shadow-sm bg-background overflow-y-auto">
+          <div className="h-full w-[248px] shadow-sm bg-background dark:bg-background-dark overflow-y-auto">
             <SidebarView />
             <button
               onClick={() => setMobileNavOpen(false)}

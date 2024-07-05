@@ -11,14 +11,14 @@ export function OverViewPage() {
           </div>
           <select
             defaultValue="today"
-            className="appearance-none h-9 rounded  bg-background text-sm font-semibold cursor-pointer outline-none py-[6px] px-[14px] pr-6"
+            className="appearance-none h-9 rounded  bg-muted dark:bg-background-dark text-sm font-semibold cursor-pointer outline-none py-[6px] px-[14px] pr-6"
           >
             <option value="today">Today</option>
             <option value="month">This Month</option>
             <option value="year">This Year</option>
           </select>
         </div>
-        <div className="grid grid-cols-1  md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1  md:grid-cols-2 xl:grid-cols-4 gap-6 text-foreground">
           <Card
             className="bg-[#f9fef0]"
             label="Revenue"

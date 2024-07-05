@@ -15,7 +15,9 @@ function SidebarSection({
   return (
     <div className={className}>
       <h4 className="text-gray-400 text-sm">{name}</h4>
-      <ul className="mt-2 flex flex-col space-y-0.5 select-none">{children}</ul>
+      <ul className="mt-2 flex flex-col space-y-0.5 select-none nav__list">
+        {children}
+      </ul>
     </div>
   );
 }
@@ -55,7 +57,7 @@ function SidebarNavItem({
     return (
       <li className="relative cursor-pointer">
         <div
-          className="px-4 py-1  flex items-center gap-2 rounded-lg hover:bg-muted"
+          className="px-4 py-1  flex items-center gap-2 rounded-lg hover:bg-muted dark:hover:bg-muted-dark"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (
@@ -81,7 +83,7 @@ function SidebarNavItem({
         <a
           href={url}
           target="_blank"
-          className="px-4 py-1 flex items-center gap-2 rounded-lg hover:bg-muted"
+          className="px-4 py-1 flex items-center gap-2 rounded-lg hover:bg-muted dark:hover:bg-muted-dark"
         >
           <Link className="text-gray-400 w-3 h-3" />
           {icon}
@@ -99,15 +101,15 @@ function SidebarNavItem({
           <>
             <div
               className={cn(
-                "invisible absolute left-0 inset-y-0 my-auto h-[20px] rounded-2xl bg-black w-1 transition-all",
+                "invisible absolute left-0 inset-y-0 my-auto h-[20px] rounded-2xl bg-black dark:bg-blue-500 w-1 transition-all",
                 { visible: isActive }
               )}
             ></div>
             <div
               className={cn(
-                "px-4 py-1 pl-11 flex items-center gap-2 rounded-lg hover:bg-muted",
+                "px-4 py-1 pl-11 flex items-center gap-2 rounded-lg hover:bg-muted dark:hover:bg-muted-dark",
                 {
-                  "bg-muted": isActive,
+                  "bg-muted dark:bg-muted-dark": isActive,
                 }
               )}
             >
@@ -130,15 +132,15 @@ function SidebarSubItem({ label, to }: { label: string; to: string }) {
           <>
             <div
               className={cn(
-                "invisible absolute left-0 inset-y-0 my-auto h-[20px] rounded-2xl bg-black w-1 transition-all",
+                "invisible absolute left-0 inset-y-0 my-auto h-[20px] rounded-2xl bg-black dark:bg-blue-500 w-1 transition-all",
                 { visible: isActive }
               )}
             ></div>
             <div
               className={cn(
-                "px-4 py-1 flex items-center gap-2 rounded-lg hover:bg-muted",
+                "px-4 py-1 flex items-center gap-2 rounded-lg hover:bg-muted dark:hover:bg-muted-dark",
                 {
-                  "bg-muted": isActive,
+                  "bg-muted dark:bg-muted-dark": isActive,
                 }
               )}
             >

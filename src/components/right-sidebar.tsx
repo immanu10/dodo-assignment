@@ -10,12 +10,12 @@ export function RightSideBar({
 }: RightSideBarProps) {
   return (
     <>
-      <aside className="w-72 hidden lg:flex border-l border-border overflow-y-auto">
+      <aside className="w-72 hidden lg:flex border-l dark:bg-background-dark border-border dark:border-slate-800 overflow-y-auto">
         <RightSidebarView />
       </aside>
       {notificationOpen && (
         <div className="lg:hidden fixed h-full w-screen bg-black/80 z-40 inset-0 overflow-hidden transition-all">
-          <div className="h-full w-72 shadow-sm bg-background overflow-y-auto float-right">
+          <div className="h-full w-72 shadow-sm bg-background dark:bg-background-dark overflow-y-auto float-right">
             <RightSidebarView />
             <button
               onClick={() => setNotificationOpen(false)}
