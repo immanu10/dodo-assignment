@@ -30,7 +30,7 @@ export function Header({
   }, [location.pathname]);
 
   return (
-    <header className="border-b border-border dark:border-slate-800 py-3 px-2 grid grid-cols-[1fr_auto] gap-2 items-center">
+    <header className="border-b border-border dark:border-slate-800 py-3 px-2 grid grid-cols-[1fr_auto] gap-2 items-center  bg-background dark:bg-background-dark z-[100]">
       <div className="flex flex-col md:flex-row md:items-center">
         <button
           className="p-1 block md:hidden"

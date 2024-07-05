@@ -24,7 +24,7 @@ export default function AppLayout() {
             setMobileNavOpen={setMobileNavOpen}
             toggleNotificationSection={toggleNotificationSection}
           />
-          <main className="overflow-y-auto w-full h-full px-2 py-4">
+          <main className="overflow-y-auto w-full h-full px-4 py-4">
             <div className="mx-auto">
               <Outlet />
             </div>

@@ -10,7 +10,7 @@ export default function NotFound() {
         </h1>
         <Link
           to="/"
-          className="mt-10 flex items-center justify-center py-[6px] px-4 rounded-[40px] bg-muted text-sm font-medium cursor-pointer hover:bg-blue-primary text-black-50 hover:text-black-100 transition-all"
+          className="mt-10 text-foreground flex items-center justify-center py-[6px] px-4 rounded-[40px] bg-muted text-sm font-medium cursor-pointer hover:bg-blue-primary text-black-50 hover:text-black-100 transition-all"
         >
           <span>Back to home</span>
         </Link>

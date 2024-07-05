@@ -231,7 +231,7 @@ function SidebarView() {
         />
       </SidebarSection>
       <div className="mt-16 pb-8">
-        <img src="/app-logo.svg" alt="applogo" />
+        <img src="/app-logo.svg" alt="applogo" className="dark:invert" />
       </div>
     </div>
   );

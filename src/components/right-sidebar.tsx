@@ -72,7 +72,7 @@ function RightSidebarView() {
               <span className="p-1 bg-blue-100 rounded-lg">
                 <item.icon className="w-4 h-4 text-black/60" />
               </span>
-              <div className="text-xs font-light">
+              <div className="text-xs">
                 <p className="">{item.text}</p>
                 <span className="text-gray-400">{item.datetime}</span>
               </div>
@@ -93,7 +93,7 @@ function RightSidebarView() {
                   <span className="block mb-2 w-[1.5px] h-5 rounded-lg bg-gray-300"></span>
                 )}
               </div>
-              <div className="text-xs font-light">
+              <div className="text-xs">
                 <p className="">{item.text}</p>
                 <span className="text-gray-400">{item.datetime}</span>
               </div>
