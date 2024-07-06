@@ -24,7 +24,7 @@ const data = [
     fill: "#FF8b60",
   },
   {
-    name: "HackerNews",
+    name: "IndieHack",
     amt: 600,
     fill: "#e57a53",
   },
@@ -62,7 +62,7 @@ export function BarChart({ title }: { title: string }) {
             dx={-10}
             className="text-sm font-medium"
           />
-          <Bar dataKey="amt" barSize={30} radius={[6, 6, 0, 0]} />
+          <Bar dataKey="amt" barSize={25} radius={[6, 6, 0, 0]} />
         </BarReChart>
       </ResponsiveContainer>
     </div>

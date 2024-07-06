@@ -9,6 +9,7 @@ import AppLayout from "./components/layout/app-layout";
 import NotFound from "./pages/not-found";
 import { OverViewPage } from "./pages/overview";
 import { DarkModeProvider } from "./context/ThemeContext";
+import { Transaction } from "./pages/transaction";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
               }
             >
               <Route index element={<Navigate replace to="overview" />} />
-              <Route path="overview" element={<h1> overview</h1>} />
+              <Route path="overview" element={<Transaction />} />
               <Route path="products" element={<h1> products</h1>} />
             </Route>
           </Route>
