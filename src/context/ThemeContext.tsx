@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 
 interface DarkModeContextType {
   isDark: boolean;
@@ -24,11 +30,22 @@ interface DarkModeProviderProps {
 export const DarkModeProvider: React.FC<DarkModeProviderProps> = ({
   children,
 }) => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    const savedMode = localStorage.getItem("dark-mode");
+    return savedMode === "true";
+  });
+
+  useEffect(() => {
+    if (isDark) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+    localStorage.setItem("dark-mode", isDark.toString());
+  }, [isDark]);
 
   const toggleDarkMode = () => {
     setIsDark(!isDark);
-    document.body.classList.toggle("dark");
   };
 
   return (

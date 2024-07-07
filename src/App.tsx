@@ -10,6 +10,8 @@ import NotFound from "./pages/not-found";
 import { OverViewPage } from "./pages/overview";
 import { DarkModeProvider } from "./context/ThemeContext";
 import { Transaction } from "./pages/transaction";
+import TransactionLayout from "./components/layout/transaction";
+import UserSettingsForm from "./components/settings-form";
 
 function App() {
   return (
@@ -19,18 +21,14 @@ function App() {
           <Route element={<AppLayout />}>
             <Route index element={<Navigate replace to="/overview" />} />
             <Route path="/overview" element={<OverViewPage />} />
-            <Route
-              path="/transaction"
-              element={
-                <div className="">
-                  <h1>Transaction</h1>
-                  <Outlet />
-                </div>
-              }
-            >
+            <Route path="/transaction" element={<TransactionLayout />}>
               <Route index element={<Navigate replace to="overview" />} />
               <Route path="overview" element={<Transaction />} />
-              <Route path="products" element={<h1> products</h1>} />
+              <Route path="products" element={<h1>Products</h1>} />
+            </Route>
+            <Route path="/developer" element={<Outlet />}>
+              <Route index element={<Navigate replace to="overview" />} />
+              <Route path="settings" element={<UserSettingsForm />} />
             </Route>
           </Route>
           <Route path="*" element={<NotFound />} />

@@ -37,6 +37,14 @@ export default function AppLayout() {
           />
         )}
       </div>
+      <div className="fixed right-0 bottom-1 bg-white dark:bg-slate-900 px-2 py-1 text-xs font-medium border dark:border-slate-600 rounded-lg">
+        <span>
+          Made by{" "}
+          <a href="https://immanu10.github.io/" target="_blank">
+            @immanu10
+          </a>
+        </span>
+      </div>
     </div>
   );
 }

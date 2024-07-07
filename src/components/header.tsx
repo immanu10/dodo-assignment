@@ -26,7 +26,7 @@ export function Header({
 
   useEffect(() => {
     const pagePath = location.pathname.split("/");
-    setPageName(pagePath[1] || "Home");
+    setPageName(pagePath.join(" / ") || "Home");
   }, [location.pathname]);
 
   return (
@@ -42,8 +42,7 @@ export function Header({
           <RocketIcon />
           <StartIcon />
           <span className="inline text-gray-400">Pages</span>
-          <span className="inline text-gray-400">/</span>
-          <span className="inline capitalize"> {pageName}</span>
+          <span className="inline capitalize"> {pageName} </span>
         </div>
       </div>
       <div className="flex items-center gap-2">

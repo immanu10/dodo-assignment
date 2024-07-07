@@ -68,11 +68,11 @@ function SidebarView() {
       children: [
         {
           label: "Sub Item 1",
-          to: "/invoices",
+          to: "/invoices/sub1",
         },
         {
           label: "Sub Item 2",
-          to: "/invoices",
+          to: "/invoices/sub2",
         },
       ],
     },
@@ -82,11 +82,11 @@ function SidebarView() {
       children: [
         {
           label: "Sub Item 1",
-          to: "/customers",
+          to: "/customers/sub1",
         },
         {
           label: "Sub Item 2",
-          to: "/customers",
+          to: "/customers/sub2",
         },
       ],
     },
@@ -96,19 +96,19 @@ function SidebarView() {
       children: [
         {
           label: "Overview",
-          to: "/customers",
+          to: "/catalog/overview",
         },
         {
           label: "Products",
-          to: "/customers",
+          to: "/catalog/products",
         },
         {
           label: "Discounts",
-          to: "/customers",
+          to: "/catalog/discounts",
         },
         {
           label: "Taxable Items",
-          to: "/customers",
+          to: "/catalog/taxable",
         },
       ],
     },
@@ -118,11 +118,11 @@ function SidebarView() {
       children: [
         {
           label: "Sub Item 1",
-          to: "/customers",
+          to: "/reports/sub1",
         },
         {
           label: "Sub Item 2",
-          to: "/customers",
+          to: "/reports/sub2",
         },
       ],
     },
@@ -132,11 +132,11 @@ function SidebarView() {
       children: [
         {
           label: "Sub Item 1",
-          to: "/customers",
+          to: "/checkout/sub1",
         },
         {
           label: "Sub Item 2",
-          to: "/customers",
+          to: "/Checkout/sub2",
         },
       ],
     },
@@ -146,11 +146,11 @@ function SidebarView() {
       children: [
         {
           label: "Sub Item 1",
-          to: "/customers",
+          to: "/business/sub1",
         },
         {
           label: "Sub Item 2",
-          to: "/customers",
+          to: "/business/sub2",
         },
       ],
     },
@@ -159,12 +159,12 @@ function SidebarView() {
       icon: <GearIcon />,
       children: [
         {
-          label: "Sub Item 1",
-          to: "/customers",
+          label: "Settings",
+          to: "/developer/settings",
         },
         {
           label: "Sub Item 2",
-          to: "/customers",
+          to: "/developer/sub2",
         },
       ],
     },

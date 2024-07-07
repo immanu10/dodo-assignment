@@ -17,7 +17,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "px-5 py-6 rounded-2xl min-w-40 dark:bg-slate-800 dark:text-gray-300",
+        "px-5 py-6 rounded-2xl min-w-40 dark:bg-blue-950 dark:text-gray-300",
         className
       )}
     >
